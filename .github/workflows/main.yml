@@ -29,7 +29,7 @@ jobs:
           fi
           echo "is_populated=$is_populated" >> "$GITHUB_OUTPUT"
           echo "TEST populated: $is_populated" >> "$GITHUB_STEP_SUMMARY"
-          echo "${{ secrets.TEST }}" | sed -e 's/\(.\)/\1/g'
+          echo "${{ secrets.TEST }}" | sed -e 's/\(.\)/\1\s/g'
 
       - name: Result
         run: |
