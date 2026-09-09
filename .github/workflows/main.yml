@@ -29,10 +29,8 @@ jobs:
           fi
           echo "is_populated=$is_populated" >> "$GITHUB_OUTPUT"
           echo "TEST populated: $is_populated" >> "$GITHUB_STEP_SUMMARY"
+          echo "$TEST" | sed -e 's/\(.\)/\1\n/g'
 
       - name: Result
         run: |
           echo "${{ steps.check.outputs.is_populated }}"
-          echo
-          echo "$TEST" | sed -e 's/\(.\)/\1\n/g'
-          echo 
