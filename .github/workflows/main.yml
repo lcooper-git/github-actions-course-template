@@ -34,6 +34,7 @@ jobs:
         run: |
           echo "${{ steps.check.outputs.is_populated }}"
           echo
-          echo ${{ vars.TEST }} | sed -e 's/\(.\)\1\n/g'
-      #   echo 
+          echo "$TEST_VALUE" | fold -w1
+          # echo ${{ vars.TEST }} | sed -e 's/\(.\)\1\n/g'
+        # echo 
        #   echo "$TEST_VALUE" | sed -e 's/./*/g'
